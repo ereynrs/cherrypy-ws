@@ -1,56 +1,88 @@
 import os
 import cherrypy
 
-class HelloWorld:
+class mySaaS:
 
     @cherrypy.expose
     def index(self):
-        return 'We have a <a href="hello_message">message</a> for you!'
-
-    @cherrypy.expose
-    def hello_message(self):
-        return 'Hi buddy! Say your name <a href="./say_your_full_name">here</a>'
-
-    @cherrypy.expose
-    def say_your_full_name(self):
         return '''
-            <form action="get_xml" method="GET">
-            What's your name?
-            <input type="text" name="first_name" />
-            <input type="text" name="last_name" />
-            <input type="submit" />
-            </form>'''
+        <?xml version="1.0"?>
+        <p>Hi buddy!</p>
+        <p> Welcome to our incredible SaaS platform...</p>
+        <p>You can obtain contact details details about our employees <a href="get_contact_details">here</a></p>
+        <p>You can obtain professional details details about our employees <a href="get_professional_details">here</a></p>
+        </xml>'''
 
-    # @cherrypy.expose
-    # def greetUser(self, first_name=None, last_name=None):
-    #     if (first_name and last_name):
-    #         return 'Hi {} {}!'.format(first_name, last_name)
-    #     else:
-    #         if first_name is None: return 'Please enter your first name <a href="./say_your_full_name">here</a>.'
-    #         if last_name is None: return 'Please enter your last name <a href="./say_your_full_name">here</a>.'
 
     @cherrypy.expose
-    @cherrypy.tools.json_in()
-    def get_xml(self):
-        fn = cherrypy.request.json['first_name']
-        ln = cherrypy.request.json['last_name']
-        if (fn and ln):
-            from jinja2 import Template
-            template = Template('''
-            <?xml version="1.0"?>
-            <person iri="https://ruben.verborgh.org/profile/#me"><first_name>{{ first_name }}</first>
-            <last_name>{{ last_name }}</last_name>
-            </person></xml>
-            ''')
-            return template.render(first_name=fn, last_name=ln)
-        else:
-            if fn is None: return 'Please enter your first name <a href="./say_your_full_name">here</a>.'
-            if ln is None: return 'Please enter your last name <a href="./say_your_full_name">here</a>.'
+    def get_contact_details(self):
 
+        import json
+        with open('/home/ereynares/code/web-services/contact_details.json', 'r') as fp:
+            data = json.load(fp)
+
+        from jinja2 import Template
+        template = Template('''
+        <?xml version="1.0"?>
+        {% for person in data %}
+        <person href={{data[person]['uri']}}>
+        <uri>{{data[person]['uri']}}</uri>
+        <fullname>{{ data[person]['fullname'] }}</fullname>
+        <phone>{{ data[person]['phone'] }}</phone>
+        </person>
+        </xml>
+        {% endfor %}
+        ''')
+        return template.render(data=data)
+
+
+    @cherrypy.expose
+    def get_professional_details(self):
+
+        import json
+        with open('/home/ereynares/code/web-services/professional_details.json', 'r') as fp:
+            data = json.load(fp)
+
+        from jinja2 import Template
+        template = Template('''
+        <?xml version="1.0"?>
+        {% for person in data %}
+        <person href={{data[person]['uri']}}>
+        <uri>{{data[person]['uri']}}</uri>
+        <fullname>{{ data[person]['fullname'] }}</fullname>
+        <profession>{{ data[person]['profession'] }}</profession>
+        <department>{{data[person]['department']}}</department>
+        <salary>{{data[person]['salary']}}</salary>
+        </person>
+        </xml>
+        {% endfor %}
+        ''')
+        return template.render(data=data)
+
+
+    @cherrypy.expose
+    def describe_john(self):
+
+        import utils
+        opener = utils.get_opener()
+
+        import urllib
+        query = urllib.parse.quote('''PREFIX ex:<http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#>SELECT ?p WHERE {?p ex:has_name ?name. FILTER (?name='John Doe')}''').encode()
+        response =  opener.open('http://localhost:5820/mySaaS#!/query/')
+        return response
+
+
+    @cherrypy.expose
+    def describe_mary(self):
+
+        import utils
+        opener = utils.get_opener()
+
+        import urllib
+        query = urllib.parse.quote('''PREFIX ex:<http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#>SELECT ?p WHERE {?p ex:has_name ?name. FILTER (?name='Mary Grande')}''').encode()
+        return opener.open('http://localhost:5820/mySaaS#!/query/')
 
 #server_conf = os.path.join(os.path.dirname(__file__), 'cherry-ws.conf')
-
-
 if __name__ == '__main__':
     #cherrypy.quickstart(HelloWorld(), server_conf)
-    cherrypy.quickstart(HelloWorld())
+    cherrypy.quickstart(mySaaS())
