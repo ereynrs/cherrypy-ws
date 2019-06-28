@@ -7,7 +7,7 @@ def get_opener():
 
     # Add the username and password.
     # If we knew the realm, we could use it instead of None.
-    top_level_url = "http://localhost:5820/" #"http://example.com/foo/"
+    top_level_url = "http://localhost:5820/"
     password_mgr.add_password(None, top_level_url, 'admin', 'admin')
 
     handler = urllib.request.HTTPBasicAuthHandler(password_mgr)

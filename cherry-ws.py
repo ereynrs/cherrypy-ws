@@ -65,11 +65,7 @@ class mySaaS:
 
         import utils
         opener = utils.get_opener()
-
-        import urllib
-        query = urllib.parse.quote('''PREFIX ex:<http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#>SELECT ?p WHERE {?p ex:has_name ?name. FILTER (?name='John Doe')}''').encode()
-        response =  opener.open('http://localhost:5820/mySaaS#!/query/')
-        return response
+        return opener.open('http://localhost:5820/mySaaS#')
 
 
     @cherrypy.expose
@@ -77,12 +73,10 @@ class mySaaS:
 
         import utils
         opener = utils.get_opener()
-
-        import urllib
-        query = urllib.parse.quote('''PREFIX ex:<http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#>SELECT ?p WHERE {?p ex:has_name ?name. FILTER (?name='Mary Grande')}''').encode()
         return opener.open('http://localhost:5820/mySaaS#!/query/')
 
 #server_conf = os.path.join(os.path.dirname(__file__), 'cherry-ws.conf')
+
 if __name__ == '__main__':
     #cherrypy.quickstart(HelloWorld(), server_conf)
     cherrypy.quickstart(mySaaS())
