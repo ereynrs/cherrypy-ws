@@ -1,1 +1,15 @@
-{"p2": {"uri": "http://cidisi.frsf.utn.edu.ar/ontologies/sparql-example#p2", "salary": "40000", "fullname": "M.G.", "department": "RRHH", "profession": "Lawyer"}, "p1": {"uri": "http://cidisi.frsf.utn.edu.ar/ontologies/sparql-example#p1", "salary": 50000, "fullname": "J.D.", "department": "IT", "profession": "Engineer"}}
+{
+  "p2": {"uri": "http://cidisi.frsf.utn.edu.ar/ontologies/sparql-example#p2",
+         "salary": "40000",
+         "fullname": "M.G.",
+         "department": "RRHH",
+         "profession": "Lawyer"
+         },
+  "p1": {"uri": "http://cidisi.frsf.utn.edu.ar/ontologies/sparql-example#p1",
+         "salary": 50000,
+         "fullname": "J.D.",
+         "department": "IT",
+         "profession":
+         "Engineer"
+         }
+}

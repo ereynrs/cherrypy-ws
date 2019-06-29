@@ -9,13 +9,13 @@ class mySaaS:
         <?xml version="1.0"?>
         <p>Hi buddy!</p>
         <p> Welcome to our incredible SaaS platform...</p>
-        <p>You can obtain contact details details about our employees <a href="get_contact_details">here</a></p>
-        <p>You can obtain professional details details about our employees <a href="get_professional_details">here</a></p>
+        <p>You can obtain contact details details about our employees <a href="contact_details">here</a></p>
+        <p>You can obtain professional details details about our employees <a href="professional_details">here</a></p>
         </xml>'''
 
 
     @cherrypy.expose
-    def get_contact_details(self):
+    def contact_details(self):
 
         import json
         with open('/home/ereynares/code/web-services/contact_details.json', 'r') as fp:
@@ -30,14 +30,14 @@ class mySaaS:
         <fullname>{{ data[person]['fullname'] }}</fullname>
         <phone>{{ data[person]['phone'] }}</phone>
         </person>
-        </xml>
         {% endfor %}
+        </xml>
         ''')
         return template.render(data=data)
 
 
     @cherrypy.expose
-    def get_professional_details(self):
+    def professional_details(self):
 
         import json
         with open('/home/ereynares/code/web-services/professional_details.json', 'r') as fp:
@@ -54,8 +54,8 @@ class mySaaS:
         <department>{{data[person]['department']}}</department>
         <salary>{{data[person]['salary']}}</salary>
         </person>
-        </xml>
         {% endfor %}
+        </xml>
         ''')
         return template.render(data=data)
 

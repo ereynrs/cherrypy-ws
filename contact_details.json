@@ -1,1 +1,6 @@
-{"p2": {"phone": "+54934257856", "uri": "http://cidisi.frsf.utn.edu.ar/ontologies/sparql-example#p2", "fullname": "Mary Grande"}, "p1": {"phone": "+549342587962", "uri": "http://cidisi.frsf.utn.edu.ar/ontologies/sparql-example#p1", "fullname": "John Doe"}}
+{"p2": {"phone": "+54934257856", 
+        "uri": "http://cidisi.frsf.utn.edu.ar/ontologies/sparql-example#p2",
+        "fullname": "Mary Grande"},
+ "p1": {"phone": "+549342587962",
+        "uri": "http://cidisi.frsf.utn.edu.ar/ontologies/sparql-example#p1",
+        "fullname": "John Doe"}}
