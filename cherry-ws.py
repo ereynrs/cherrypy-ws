@@ -1,6 +1,10 @@
 import os
 import cherrypy
 
+import os
+from pathlib import Path
+ACPATH = Path(os.path.dirname(__file__))
+
 class mySaaS:
 
     @cherrypy.expose
@@ -18,7 +22,7 @@ class mySaaS:
     def contact_details(self):
 
         import json
-        with open('/home/ereynares/code/web-services/contact_details.json', 'r') as fp:
+        with open(str(ACPATH / 'contact_details.json'), 'r') as fp:
             data = json.load(fp)
 
         from jinja2 import Template
@@ -40,7 +44,7 @@ class mySaaS:
     def professional_details(self):
 
         import json
-        with open('/home/ereynares/code/web-services/professional_details.json', 'r') as fp:
+        with open(str(ACPATH / 'professional_details.json'), 'r') as fp:
             data = json.load(fp)
 
         from jinja2 import Template
