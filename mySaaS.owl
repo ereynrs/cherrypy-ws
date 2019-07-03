@@ -1,20 +1,61 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://cidisi.frsf.utn.edu.ar/ontologies/sparql-example#"
-     xml:base="http://cidisi.frsf.utn.edu.ar/ontologies/sparql-example"
+<rdf:RDF xmlns="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#"
+     xml:base="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:mySaaS="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#"
+     xmlns:mysaas="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#"
      xmlns:sparql-example="http://cidisi.utn.edu.ar/ereynares/ontologies/sparql-example#"
      xmlns:sparql-example1="http://cidisi.utn.edu.ar/ontologies/sparql-example#"
      xmlns:sparql-example2="http://cidisi.frsf.utn.edu.ar/ontologies/sparql-example#">
     <owl:Ontology rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS"/>
-    
 
 
-    <!-- 
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- has_age -->
+
+    <owl:AnnotationProperty rdf:about="has_age"/>
+
+
+
+    <!-- has_friend -->
+
+    <owl:AnnotationProperty rdf:about="has_friend"/>
+
+
+
+    <!-- has_name -->
+
+    <owl:AnnotationProperty rdf:about="has_name"/>
+
+
+
+    <!-- has_profession -->
+
+    <owl:AnnotationProperty rdf:about="has_profession"/>
+
+
+
+    <!-- has_sister -->
+
+    <owl:AnnotationProperty rdf:about="has_sister"/>
+
+
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -22,28 +63,28 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#has_friend -->
 
-    <owl:ObjectProperty rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#has_friend">
-        <rdfs:domain rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Person"/>
-        <rdfs:range rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Person"/>
+    <!-- mysaas:has_friend -->
+
+    <owl:ObjectProperty rdf:about="mysaas:has_friend">
+        <rdfs:domain rdf:resource="mysaas:Person"/>
+        <rdfs:range rdf:resource="mysaas:Person"/>
     </owl:ObjectProperty>
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#has_sister -->
 
-    <owl:ObjectProperty rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#has_sister">
-        <rdfs:domain rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Person"/>
-        <rdfs:range rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Woman"/>
+    <!-- mysaas:has_sister -->
+
+    <owl:ObjectProperty rdf:about="mysaas:has_sister">
+        <rdfs:domain rdf:resource="mysaas:Person"/>
+        <rdfs:range rdf:resource="mysaas:Woman"/>
     </owl:ObjectProperty>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
@@ -51,37 +92,37 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#has_age -->
 
-    <owl:DatatypeProperty rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#has_age">
-        <rdfs:domain rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Person"/>
+    <!-- mysaas:has_age -->
+
+    <owl:DatatypeProperty rdf:about="mysaas:has_age">
+        <rdfs:domain rdf:resource="mysaas:Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#has_name -->
 
-    <owl:DatatypeProperty rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#has_name">
-        <rdfs:domain rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Person"/>
+    <!-- mysaas:has_name -->
+
+    <owl:DatatypeProperty rdf:about="mysaas:has_name">
+        <rdfs:domain rdf:resource="mysaas:Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#has_profession -->
 
-    <owl:DatatypeProperty rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#has_profession">
-        <rdfs:domain rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Person"/>
+    <!-- mysaas:has_profession -->
+
+    <owl:DatatypeProperty rdf:about="mysaas:has_profession">
+        <rdfs:domain rdf:resource="mysaas:Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -89,32 +130,32 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Man -->
 
-    <owl:Class rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Man">
-        <rdfs:subClassOf rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Person"/>
+    <!-- mysaas:Man -->
+
+    <owl:Class rdf:about="mysaas:Man">
+        <rdfs:subClassOf rdf:resource="mysaas:Person"/>
     </owl:Class>
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Person -->
 
-    <owl:Class rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Person"/>
-    
+    <!-- mysaas:Person -->
+
+    <owl:Class rdf:about="mysaas:Person"/>
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Woman -->
 
-    <owl:Class rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Woman">
-        <rdfs:subClassOf rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Person"/>
+    <!-- mysaas:Woman -->
+
+    <owl:Class rdf:about="mysaas:Woman">
+        <rdfs:subClassOf rdf:resource="mysaas:Person"/>
     </owl:Class>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Individuals
@@ -122,92 +163,91 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p1 -->
 
-    <owl:NamedIndividual rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p1">
-        <rdf:type rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Man"/>
-        <mySaaS:has_sister rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p2"/>
-        <mySaaS:has_sister rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p22"/>
-        <mySaaS:has_age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</mySaaS:has_age>
-        <mySaaS:has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">John Doe</mySaaS:has_name>
-        <mySaaS:has_profession rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Engineer</mySaaS:has_profession>
+    <!-- mysaas:p1 -->
+
+    <owl:NamedIndividual rdf:about="mysaas:p1">
+        <rdf:type rdf:resource="mysaas:Man"/>
+        <has_age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</has_age>
+        <has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">John Doe</has_name>
+        <has_profession rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Engineer</has_profession>
+        <has_sister rdf:resource="mysaas:p2"/>
+        <has_sister rdf:resource="mysaas:p22"/>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p2 -->
 
-    <owl:NamedIndividual rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p2">
-        <rdf:type rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Woman"/>
-        <mySaaS:has_friend rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p3"/>
-        <mySaaS:has_friend rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p4"/>
-        <mySaaS:has_friend rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p5"/>
-        <mySaaS:has_age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</mySaaS:has_age>
-        <mySaaS:has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mary Grande</mySaaS:has_name>
-        <mySaaS:has_profession rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lawyer</mySaaS:has_profession>
+    <!-- mysaas:p2 -->
+
+    <owl:NamedIndividual rdf:about="mysaas:p2">
+        <rdf:type rdf:resource="mysaas:Woman"/>
+        <has_age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</has_age>
+        <has_friend rdf:resource="mysaas:p3"/>
+        <has_friend rdf:resource="mysaas:p4"/>
+        <has_friend rdf:resource="mysaas:p5"/>
+        <has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mary Grande</has_name>
+        <has_profession rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lawyer</has_profession>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p22 -->
 
-    <owl:NamedIndividual rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p22">
-        <rdf:type rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Woman"/>
-        <mySaaS:has_friend rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p6"/>
-        <mySaaS:has_friend rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p7"/>
-        <mySaaS:has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caren</mySaaS:has_name>
+    <!-- mysaas:p22 -->
+
+    <owl:NamedIndividual rdf:about="mysaas:p22">
+        <rdf:type rdf:resource="mysaas:Woman"/>
+        <has_friend rdf:resource="mysaas:p6"/>
+        <has_friend rdf:resource="mysaas:p7"/>
+        <has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caren</has_name>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p3 -->
 
-    <owl:NamedIndividual rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p3">
-        <rdf:type rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Woman"/>
-        <mySaaS:has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angela</mySaaS:has_name>
+    <!-- mysaas:p3 -->
+
+    <owl:NamedIndividual rdf:about="mysaas:p3">
+        <rdf:type rdf:resource="mysaas:Woman"/>
+        <has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angela</has_name>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p4 -->
 
-    <owl:NamedIndividual rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p4">
-        <rdf:type rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Man"/>
-        <mySaaS:has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Louis</mySaaS:has_name>
+    <!-- mysaas:p4 -->
+
+    <owl:NamedIndividual rdf:about="mysaas:p4">
+        <rdf:type rdf:resource="mysaas:Man"/>
+        <has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Louis</has_name>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p5 -->
 
-    <owl:NamedIndividual rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p5">
-        <rdf:type rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Man"/>
-        <mySaaS:has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David</mySaaS:has_name>
+    <!-- mysaas:p5 -->
+
+    <owl:NamedIndividual rdf:about="mysaas:p5">
+        <rdf:type rdf:resource="mysaas:Man"/>
+        <has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David</has_name>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p6 -->
 
-    <owl:NamedIndividual rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p6">
-        <rdf:type rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Woman"/>
-        <mySaaS:has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rose</mySaaS:has_name>
+    <!-- mysaas:p6 -->
+
+    <owl:NamedIndividual rdf:about="mysaas:p6">
+        <rdf:type rdf:resource="mysaas:Woman"/>
+        <has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rose</has_name>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p7 -->
 
-    <owl:NamedIndividual rdf:about="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#p7">
-        <rdf:type rdf:resource="http://frsf.utn.edu.ar/tidi/ontologies/mySaaS#Woman"/>
-        <mySaaS:has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tania</mySaaS:has_name>
+    <!-- mysaas:p7 -->
+
+    <owl:NamedIndividual rdf:about="mysaas:p7">
+        <rdf:type rdf:resource="mysaas:Woman"/>
+        <has_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tania</has_name>
     </owl:NamedIndividual>
 </rdf:RDF>
 
 
 
 <!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-

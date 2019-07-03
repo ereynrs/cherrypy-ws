@@ -14,4 +14,5 @@ def get_opener():
 
     # create "opener" (OpenerDirector instance)
     opener = urllib.request.build_opener(handler)
+
     return opener

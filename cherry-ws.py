@@ -69,7 +69,7 @@ class mySaaS:
 
         import utils
         opener = utils.get_opener()
-        return opener.open('http://localhost:5820/mySaaS#')
+        return opener.open('http://localhost:5820/annex/mySaaS/graph/mysaas:Man/mysaas:p1')
 
 
     @cherrypy.expose
@@ -77,7 +77,7 @@ class mySaaS:
 
         import utils
         opener = utils.get_opener()
-        return opener.open('http://localhost:5820/mySaaS#!/query/')
+        return opener.open('http://localhost:5820/annex/mySaaS/graph/mysaas:Man/mysaas:p2')
 
 #server_conf = os.path.join(os.path.dirname(__file__), 'cherry-ws.conf')
 
