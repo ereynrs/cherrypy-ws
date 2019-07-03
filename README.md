@@ -7,7 +7,7 @@ This repo requires:
 * pip
 * A [Stardog](https://www.stardog.com/) database instance running on port 8080.
 * A database named _mysaas_ on the Stardog instance.
-* The _mysaas.owl_ file loaded into the database.
+* The _mySaaS.owl_ file loaded into the database.
 
 ## Running
 First, install the libraries
